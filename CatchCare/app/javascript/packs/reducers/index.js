@@ -10,6 +10,5 @@ const loginMessageReducer = (user, action) => {
 };
 
 export default combineReducers({
-    loginMessage: loginMessageReducer,
-    replaceMe: () => '10'
+    loginMessage: loginMessageReducer
 });

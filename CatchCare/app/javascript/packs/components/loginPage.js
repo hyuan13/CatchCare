@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withCookies } from 'react-cookie';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBInput } from 'mdbreact';
-import { authenticateUser } from '../actions/authActions';
 
+import { authenticateUser } from '../actions/authActions';
+import Header from './Header';
 
 class Login extends React.Component{
 
@@ -32,6 +34,7 @@ class Login extends React.Component{
         this.props.authenticateUser(this.state.email, this.state.password)
             .then(response => {
                 if(this.props.message) {
+                    this.props.cookies.set('user', this.props.message.email, { path: '/' });
                     alert("You're Logged In!");
                 }
                 else {
@@ -46,6 +49,7 @@ class Login extends React.Component{
 
 		return(
 			<div id = 'log-in'>
+                <Header />
 			    <MDBContainer style = {{position: 'relative', top: '200px', left: '20px', width: '100%'}}>
                     <MDBRow className = 'justify-content-center'>
                         <MDBCol md = '5'>
@@ -120,9 +124,8 @@ class Login extends React.Component{
 
 }
 
-const mapStateToProps = state => {
-    console.log(state);
+const mapStateToProps = (state) => {
     return {message: state.loginMessage};
 };
 
-export default connect(mapStateToProps, { authenticateUser: authenticateUser})(Login);
+export default connect(mapStateToProps, { authenticateUser: authenticateUser})(withCookies(Login));

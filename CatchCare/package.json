@@ -9,6 +9,7 @@
     "mdbreact": "^4.21.0",
     "prop-types": "^15.7.2",
     "react": "^16.10.1",
+    "react-cookie": "^4.0.1",
     "react-dom": "^16.10.1",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.1",

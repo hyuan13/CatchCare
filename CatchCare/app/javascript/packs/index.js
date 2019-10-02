@@ -8,18 +8,21 @@ import { Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import history from './history';
+import { CookiesProvider } from 'react-cookie';
 import 'mdbreact/dist/css/mdb.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 
 import Routes from './routes';
 import reducers from './reducers';
+import history from './history';
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Provider store={createStore(reducers, applyMiddleware(thunk))}>
-      <Router history={history}><Routes /></Router>
-    </Provider>,
+    <CookiesProvider>
+      <Provider store={createStore(reducers, applyMiddleware(thunk))}>
+        <Router history={history}><Routes /></Router>
+      </Provider>
+    </CookiesProvider>,
     document.body.appendChild(document.createElement('div')),
   )
 })
