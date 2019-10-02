@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Header from './Header';
+import Footer from './Footer';
 
 class Landing extends React.Component {
 
@@ -10,6 +11,9 @@ class Landing extends React.Component {
         return(
             <div>
                 <Header cookies={this.props.cookies} history={this.props.history}/>
+                <div style={{position: 'relative', top:'1300px', width:"100%"}}>
+			        <Footer />
+		        </div>
             </div>
         )
 
