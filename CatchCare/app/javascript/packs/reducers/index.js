@@ -9,6 +9,22 @@ const loginMessageReducer = (user, action) => {
     return null;
 };
 
+const emailErrorMessageReducer = (errors, action) => {
+    if(action.type === types.RETURN_EMAIL_ERROR_MESSAGE) {
+        return action.errors
+    }
+    return null;
+};
+
+const passwordErrorMessageReducer = (errors, action) => {
+    if(action.type === types.RETURN_PASSWORD_ERROR_MESSAGE) {
+        return action.errors
+    }
+    return null;
+};
+
 export default combineReducers({
-    loginMessage: loginMessageReducer
+    loginMessage: loginMessageReducer,
+    emailErrorMessage: emailErrorMessageReducer,
+    passwordErrorMessage: passwordErrorMessageReducer
 });
