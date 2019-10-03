@@ -35,6 +35,7 @@ class Login extends React.Component{
             .then(response => {
                 if(this.props.message) {
                     this.props.cookies.set('user', this.props.message.email, { path: '/' });
+                    this.props.cookies.set('id', this.props.message.id, { path: '/' });
                     alert("You're Logged In!");
                 }
                 else {
