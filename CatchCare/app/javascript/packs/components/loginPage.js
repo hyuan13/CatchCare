@@ -5,6 +5,7 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBInput } 
 
 import { authenticateUser } from '../actions/authActions';
 import Header from './Header';
+import Footer from './Footer';
 
 class Login extends React.Component{
 
@@ -118,6 +119,9 @@ class Login extends React.Component{
                         </MDBCol>    
                     </MDBRow>
                 </MDBContainer>	
+                <div style={{position: 'relative', top:'300px', width:"100%"}}>
+			        <Footer />
+		        </div>
     	    </div>
         )
 
