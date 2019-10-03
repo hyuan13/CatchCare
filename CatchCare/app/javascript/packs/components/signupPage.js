@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
 
 import { signup } from '../actions/authActions';
+import Header from './Header';
+import Footer from './Footer';
 
 class Signup extends React.Component{
 
@@ -77,6 +79,7 @@ class Signup extends React.Component{
 
         return(
             <div className="ui container">
+                <Header />
                 <MDBContainer style = {{position: 'relative', top: '200px', left: '20px', width: '100%'}}>
                   <MDBRow className = 'justify-content-center'>
                     <MDBCol md = '5'>
@@ -176,7 +179,7 @@ class Signup extends React.Component{
                         <p className = 'font-small grey-text d-flex justify-content-center'>
                           Already have an account?
                           <a
-                            href='/login'
+                            onClick = { () => this.props.history.push('/login') }
                             className='dark-grey-text font-weight-bold ml-1'
                           >
                             Log in
@@ -186,6 +189,9 @@ class Signup extends React.Component{
                     </MDBCol>
                   </MDBRow>
                 </MDBContainer>	
+                <div style={{position: 'relative', top:'300px', width:"100%"}}>
+			            <Footer />
+		            </div>
             </div>
         )
 
