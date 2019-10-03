@@ -9,7 +9,7 @@ class Personal extends React.Component {
 
         return(
             <div id="personal">
-                hello
+                <Header />
             </div>
         )
 
