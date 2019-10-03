@@ -22,19 +22,14 @@ class Header extends React.Component {
             <span className = 'logo'>
                 <MDBRow>
                     <MDBCol>
-                        <a href = '/'>
-                        <img src = {require('./images/logo.png')} height = '100' width = '105' alt = 'Catch Care' /></a>
+                        <img src = {require('./images/logo.png')} height = '100' width = '105' alt = 'Catch Care' />
                     </MDBCol>
                     <MDBCol className = 'align-items-center justify-content-center' style = {{position:'relative', top:'10px'}}>
                         <MDBRow>
-                            <a href = '/'>
                                 <img src = {require('./images/catch.png')} height = '20' width = '65' alt = 'Catch Care' />
-                            </a>
                         </MDBRow>
                         <MDBRow className = 'align-items-center justify-content-center align-middle' >
-                            <a href = '/'>
                                 <img src = {require('./images/care.png')} height = '20' width = '55' alt = 'Catch Care' />
-                            </a>
                         </MDBRow>
                     </MDBCol>
                 </MDBRow>
@@ -44,8 +39,8 @@ class Header extends React.Component {
         return(
             <div className = 'fixed-top'>
                 <MDBNavbar brand = {icon} style = {{backgroundColor: '#FFFFFF'}} expand = 'md'>
-                    <MDBNavbarBrand onClick = {() => {this.props.history.push('/')}} to = '/'>
-                        {icon}
+                    <MDBNavbarBrand>
+                        <MDBNavLink onClick = {() => {}} to = '/'>{ icon }</MDBNavLink>
                     </MDBNavbarBrand>
                     <MDBNavbarToggler onClick = {() => this.setState({isOpen:!this.state.isOpen})} />
                     <MDBCollapse id = 'navbarCollapse3' isOpen = {this.state.isOpen} navbar>
