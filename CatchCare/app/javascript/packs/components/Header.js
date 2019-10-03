@@ -13,6 +13,20 @@ class Header extends React.Component {
         this.state = {
             isOpen: false  
         };
+        this.handleClick = this.handleClick.bind(this);
+
+    }
+
+    handleClick(e) {
+
+        if(e.target.id === 'account') {
+            if(this.props.cookies.cookies.id) {
+                this.props.history.push('/myaccount');    
+            }
+            else {
+                this.props.history.push('/login');
+            }
+        }
 
     }
 
@@ -46,23 +60,23 @@ class Header extends React.Component {
                     <MDBCollapse id = 'navbarCollapse3' isOpen = {this.state.isOpen} navbar>
                         <MDBNavbarNav>
                             <MDBNavItem>
-                                <MDBNavLink id = 'about-us' style = {{color: '#66B5C4', fontSize: '34px', fontWeight: '600', fontFamily: 'Segoe UI'}} onClick = {() => {}} to = '/'> About Us </MDBNavLink>
+                                <div id = 'about-us' style = {{color: '#66B5C4', fontSize: '34px', fontWeight: '600', fontFamily: 'Segoe UI', cursor: 'pointer'}} onClick = {() => this.props.history.push('/')}> About Us </div>
                             </MDBNavItem>
                             <MDBNavItem>
-                                <MDBNavLink id = 'doctor-entrance' style = {{color: '#66B5C4', fontSize: '34px', fontWeight: '600'}} onClick = {() => {}} to = '/'> Doctor Entrance </MDBNavLink>
+                                <div id = 'doctor-entrance' style = {{color: '#66B5C4', fontSize: '34px', fontWeight: '600', cursor: 'pointer'}} onClick = {() => {}}> Doctor Entrance </div>
                             </MDBNavItem>
                             { !this.props.cookies.cookies.user && 
                                 <MDBNavItem>
-                                    <MDBNavLink id = 'login-signup' style = {{color: '#66B5C4', fontSize: '34px', fontWeight: '600'}} onClick = {() => this.props.history.push('/login')} to = '/login'> Log In / Sign Up</MDBNavLink>
+                                    <div id = 'login-signup' style = {{color: '#66B5C4', fontSize: '34px', fontWeight: '600', cursor: 'pointer'}} onClick = {() => this.props.history.push('/login')}> Log In / Sign Up</div>
                                 </MDBNavItem>
                             }
                             { this.props.cookies.cookies.user && 
                                 <MDBNavItem>
-                                    <MDBNavLink id = 'logout' style = {{color: '#66B5C4', fontSize: '34px', fontWeight: '600'}} onClick = {() => {this.props.cookies.remove('user');this.props.cookies.remove('id');alert('You have logged out!')}} to = '/'> Log Out</MDBNavLink>
+                                    <div id = 'logout' style = {{color: '#66B5C4', fontSize: '34px', fontWeight: '600', cursor: 'pointer'}} onClick = {() => {this.props.cookies.remove('user');this.props.cookies.remove('id');alert('You have logged out!')}}> Log Out</div>
                                 </MDBNavItem>
                             }
                             <MDBNavItem>
-                                <MDBNavLink id = 'account' style = {{color: '#66B5C4', fontSize: '34px', fontWeight: '600'}} onClick = {() => {}} to = '/myaccount'> My Account </MDBNavLink>
+                                <div id = 'account' style = {{color: '#66B5C4', fontSize: '34px', fontWeight: '600', cursor: 'pointer'}} onClick = {this.handleClick} > My Account </div>
                             </MDBNavItem>
                         </MDBNavbarNav>
                         <MDBNavbarNav right>  
