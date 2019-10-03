@@ -63,7 +63,7 @@ class Header extends React.Component {
                             }
                             { this.props.cookies.cookies.user && 
                                 <MDBNavItem>
-                                    <MDBNavLink id = 'logout' style = {{color: '#66B5C4', fontSize: '34px', fontWeight: '600'}} onClick = {() => {this.props.cookies.remove('user');this.props.cookies.remove('id')}} to = '/'> Log Out</MDBNavLink>
+                                    <MDBNavLink id = 'logout' style = {{color: '#66B5C4', fontSize: '34px', fontWeight: '600'}} onClick = {() => {this.props.cookies.remove('user');this.props.cookies.remove('id');alert('You have logged out!')}} to = '/'> Log Out</MDBNavLink>
                                 </MDBNavItem>
                             }
                             <MDBNavItem>
