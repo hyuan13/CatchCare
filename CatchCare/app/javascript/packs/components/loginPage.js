@@ -38,6 +38,7 @@ class Login extends React.Component{
                     this.props.cookies.set('user', this.props.message.email, { path: '/' });
                     this.props.cookies.set('id', this.props.message.id, { path: '/' });
                     alert("You're Logged In!");
+                    this.props.history.push('/myaccount');
                 }
                 else {
                     alert("Sorry, something went wrong. Please try logging in again.");

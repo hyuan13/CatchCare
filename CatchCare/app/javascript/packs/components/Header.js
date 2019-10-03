@@ -62,7 +62,7 @@ class Header extends React.Component {
                                 </MDBNavItem>
                             }
                             <MDBNavItem>
-                                <MDBNavLink id = 'account' style = {{color: '#66B5C4', fontSize: '34px', fontWeight: '600'}} onClick = {() => {}} to = '/'> My Account </MDBNavLink>
+                                <MDBNavLink id = 'account' style = {{color: '#66B5C4', fontSize: '34px', fontWeight: '600'}} onClick = {() => {}} to = '/myaccount'> My Account </MDBNavLink>
                             </MDBNavItem>
                         </MDBNavbarNav>
                         <MDBNavbarNav right>  
